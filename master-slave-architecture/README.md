@@ -1,4 +1,4 @@
-                        **Jenkins Master Slave Architecture**
+                                      Jenkins Master Slave Architecture
 
 
 ![image](https://github.com/user-attachments/assets/5fbebf00-4c7f-4e45-9cea-473045c96c25)
