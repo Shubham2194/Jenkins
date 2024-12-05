@@ -60,7 +60,7 @@ cat id_ed25519.pub >> authorized_keys
 ```
 
 Step 7: 
-**Acces jenkins on VM ip and port**
+**Acces jenkins through Jenkins-masster VM PublicIP:8080**
 
 Note : Make sure to Open 8080 port from security group ( i have configured nginx and add proxy pass as 8080 and mapped with subdomain)
 
