@@ -127,5 +127,36 @@ Go to Log of your node and you can see :
 
 ![image](https://github.com/user-attachments/assets/8debb545-91d3-4866-b838-dbda8b136770)
 
+Step 12:
+
+***To deploy resources on this agent we need to use agent (i have added dev-docker in my agent configuration):***
+
+```sh
+
+pipeline {
+    agent {
+        label "dev-docker"
+    }    
+    environment {
+        GIT_PROJECT = "https://github.com/repo/@.git"  
+    }
+    
+    stages {
+        stage('Pull Code') {
+            steps {
+                git branch: "${params.Branch}", credentialsId: 'github-cred', url: GIT_PROJECT
+                
+            }
+        }
+        stage('Build Docker') {
+            steps {
+                script{
+                    sh "docker-compose -f docker-compose-algo.yaml up -d --build"
+                }
+            }
+        }
+    }
+}
+```
 
 **We Have succcessfully Setup master-slave architecture !!**
