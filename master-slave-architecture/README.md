@@ -37,18 +37,8 @@ sudo systemctl status jenkins.service
 ![image](https://github.com/user-attachments/assets/e5e03047-0d0c-49a3-aac6-71c2b4afa565)
 
 
-Step 5: 
-**Acces jenkins on VM ip and port**
-
-Note : Make sure to Open 8080 port from security group ( i have configured nginx and add proxy pass as 8080 and mapped with subdomain)
-
-![image](https://github.com/user-attachments/assets/e6b54a58-85e2-43b3-8419-a81a3751cd4b)
-
-(Get the Jenkins admin password from - sudo cat /var/lib/jenkins/secrets/initialAdminPassword)
-
-
-Step6: 
-**Create ssh-keys on slave VM to Select the Launch agent via SSH**
+Step5: 
+**SSH to slave VM and Create ssh-keys to Select the Launch agent via SSH**
 
 ![image](https://github.com/user-attachments/assets/ebcc63b4-c17f-47e6-ac16-1295e57374e9)
 
@@ -62,12 +52,23 @@ cat ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub 
 ```
 
-Step 7: 
+Step 6: 
 **Copy id_ed25519.pub file and paste in authorized_keys**
 
 ```sh
 cat id_ed25519.pub >> authorized_keys
 ```
+
+Step 7: 
+**Acces jenkins on VM ip and port**
+
+Note : Make sure to Open 8080 port from security group ( i have configured nginx and add proxy pass as 8080 and mapped with subdomain)
+
+![image](https://github.com/user-attachments/assets/e6b54a58-85e2-43b3-8419-a81a3751cd4b)
+
+(Get the Jenkins admin password from - sudo cat /var/lib/jenkins/secrets/initialAdminPassword)
+
+
 
 Step 8:
 **Login to Jenkins in the Master node, then in Jenkins Dashboard go to set up an agent**
@@ -110,3 +111,20 @@ Save the Configurations.
 
 Click on Launch the agent.
 
+Note: You need to create credentials by clicking on Add > jenkins > choose SSH username with Private Key 
+Enter username as by checking $whoami on slave node and in Private key copy the id_ed25519 and paste here
+
+
+![image](https://github.com/user-attachments/assets/f4f3b850-72dc-415b-bb48-cb34c7025fd1)
+
+![image](https://github.com/user-attachments/assets/22a466fe-d4a4-4b39-a2b8-2ab5b8c76ad7)
+
+
+
+Step 11:
+Go to Log of your node and you can see :
+
+![image](https://github.com/user-attachments/assets/8debb545-91d3-4866-b838-dbda8b136770)
+
+
+**We Have succcessfully Setup master-slave architecture !!**
