@@ -10,7 +10,7 @@ Step 2:
 **Rename One of them as Jenkins-master and another as Jenkins-slave**
 
 Step 3:
-**Install Java on the master and slave both VM**
+**Install Java on the master as well as on slave VM**
 
 -  As Jenkins is written in Java, installing Java in the system is mandatory.
   
