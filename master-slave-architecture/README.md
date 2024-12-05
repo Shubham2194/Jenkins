@@ -111,8 +111,9 @@ Save the Configurations.
 
 Click on Launch the agent.
 
-Note: You need to create credentials by clicking on Add > jenkins > choose SSH username with Private Key 
-Enter username as by checking $whoami on slave node and in Private key copy the id_ed25519 and paste here
+Note: You need to create credentials by clicking on Add > jenkins > choose SSH username with Private Key.
+
+Enter username by checking $whoami on slave node and in Private key copy the id_ed25519 and paste here and save.
 
 
 ![image](https://github.com/user-attachments/assets/f4f3b850-72dc-415b-bb48-cb34c7025fd1)
